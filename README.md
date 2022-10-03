@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> <h1 align=&#34;center&#34;>Welcome to labMoviesApp 👋</h1> <p> </p>
+> <h1 align=&#34;center&#34;>Welcome to labMoviesApp 👋</h1> <p> This is a very simple react web app that I will be developing for my continuous assessment assignment in college </p>
 
 ### 🏠 [Homepage](https://github.com/MosesUgwulo/labMoviesApp#readme)
 
