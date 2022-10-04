@@ -8,6 +8,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 const MoviePage = (props) => {
   const movie = props.movie;
   const images = props.images;
+  console.log(props)
 
   return (
     <>
