@@ -1,43 +1,51 @@
-import React, { useState } from "react";
-import Header from "../headerMovieList";
-import FilterCard from "../filterMoviesCard";
-import MovieList from "../movieList";
+import React, { useState, useEffect } from "react";
+import MovieHeader from "../headerMovie";
 import Grid from "@mui/material/Grid";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import { getMovieImages } from "../../api/tmdb-api";
 
-function MovieListPageTemplate({ movies, title, selectFavourite }) {
-  const [nameFilter, setNameFilter] = useState("");
-  const [genreFilter, setGenreFilter] = useState("0");
-  const genreId = Number(genreFilter);
+const TemplateMoviePage = ({ movie, children }) => {
+  const [images, setImages] = useState([]);
 
-  let displayedMovies = movies
-    .filter((m) => {
-      return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-    })
-    .filter((m) => {
-      return genreId > 0 ? m.genre_ids.includes(genreId) : true;
+  useEffect(() => {
+    getMovieImages(movie.id).then((images) => {
+      setImages(images);
     });
-
-  const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <Grid container sx={{ padding: '20px' }}>
-      <Grid item xs={12}>
-        <Header title={title} />
-      </Grid>
-      <Grid item container spacing={5}>
-        <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
-          <FilterCard
-            onUserInput={handleChange}
-            titleFilter={nameFilter}
-            genreFilter={genreFilter}
-          />
+    <>
+      <MovieHeader movie={movie} />
+
+      <Grid container spacing={5} sx={{ padding: "15px" }}>
+        <Grid item xs={3}>
+          <div sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}>
+            <ImageList 
+                cols={1}>
+                {images.map((image) => (
+                    <ImageListItem key={image.file_path} cols={1}>
+                    <img
+                        src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
+                        alt={image.poster_path}
+                    />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+          </div>
         </Grid>
-        <MovieList selectFavourite={selectFavourite} movies={displayedMovies}></MovieList>
+
+        <Grid item xs={9}>
+          {children}
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
-}
-export default MovieListPageTemplate;
+};
+
+export default TemplateMoviePage;
