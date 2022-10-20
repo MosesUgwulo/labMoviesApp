@@ -19,26 +19,26 @@ const formControl =
     backgroundColor: "rgb(255, 255, 255)"
   };
 
-  export default function FilterMoviesCard(props) {
-    const [genres, setGenres] = useState([{ id: '0', name: "All" }])
-  
-    useEffect(() => {
-      getGenres().then((allGenres) => {
-        setGenres([genres[0], ...allGenres]);
-      });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-  
-    const handleChange = (e, type, value) => {
-      e.preventDefault()
-      props.onUserInput(type, value)   // NEW
-    }
-    const handleTextChange = e => {
-      handleChange(e, "name", e.target.value)
-    }
-    const handleGenreChange = e => {
-      handleChange(e, "genre", e.target.value)
-    };
+export default function FilterMoviesCard(props) {
+  const [genres, setGenres] = useState([{ id: '0', name: "All" }])
+
+  useEffect(() => {
+    getGenres().then((allGenres) => {
+      setGenres([genres[0], ...allGenres]);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleChange = (e, type, value) => {
+    e.preventDefault()
+    props.onUserInput(type, value)   // NEW
+  }
+  const handleTextChange = e => {
+    handleChange(e, "name", e.target.value)
+  }
+  const handleGenreChange = e => {
+    handleChange(e, "genre", e.target.value)
+  };
 
   return (
     <Card 
@@ -53,7 +53,7 @@ const formControl =
           Filter the movies.
         </Typography>
         <TextField
-        sx={formControl}
+      sx={formControl}
       id="filled-search"
       label="Search field"
       type="search"
@@ -69,7 +69,15 @@ const formControl =
     defaultValue=""
     value={props.genreFilter}
     onChange={handleGenreChange}
-  ></Select>
+  >
+            {genres.map((genre) => {
+              return (
+                <MenuItem key={genre.id} value={genre.id}>
+                  {genre.name}
+                </MenuItem>
+              );
+            })}
+          </Select>
         </FormControl>
       </CardContent>
       <CardMedia
