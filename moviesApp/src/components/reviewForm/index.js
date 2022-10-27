@@ -9,6 +9,8 @@ import { MoviesContext } from "../../contexts/moviesContext";
 import { useNavigate } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import styles from "./styles"
+import ratings from "./ratingCategories"
 
 const ReviewForm = ({ movie }) => {
   const defaultValues = {
