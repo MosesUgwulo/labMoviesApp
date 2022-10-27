@@ -74,7 +74,7 @@ export default function MovieCard({ movie, action }) {
       <IconButton aria-label="add to favourites" onClick={handleAddToFavourite}>
         <FavoriteIcon color="primary" fontSize="large" />
     </IconButton>
-        <Link to={`{action(movie)} /movies/${movie.id}}>`}>
+        <Link to={`{action(movie)}/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
