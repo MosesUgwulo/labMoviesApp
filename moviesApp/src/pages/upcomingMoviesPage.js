@@ -14,6 +14,9 @@ const UpcomingMoviesPage = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const mustWatch = movies.filter(m => m.mustWatch)
+  localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
+
   return (
     <PageTemplate
       title="Upcoming Movies"
