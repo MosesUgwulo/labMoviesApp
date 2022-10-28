@@ -8,7 +8,12 @@ const MoviesContextProvider = (props) => {
   const [mustWatch, setMustWatch] = useState( [] )
 
   const addWatchlist = (movie) => {
-    setMustWatch([...mustWatch,movie.id])
+    let newMustWatch = [...mustWatch];
+    if (!mustWatch.includes(movie.id)) {
+      newMustWatch.push(movie.id);
+    }
+    setMustWatch([...newMustWatch])
+    console.log(newMustWatch)
   };
 
   const removeFromWatchList = (movie) => {
