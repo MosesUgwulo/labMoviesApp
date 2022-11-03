@@ -22,10 +22,10 @@ const queryClient = new QueryClient({
     },
   },
 }); 
-
+//let me just test this
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}> 
       <BrowserRouter>
         <SiteHeader />
         <MoviesContextProvider>   {/* New Header  */}
