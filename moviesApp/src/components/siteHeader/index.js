@@ -24,11 +24,12 @@ const SiteHeader = ({ history }) => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/homepage" },
     { label: "Favourites", path: "/movies/favourites" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Option 3", path: "/" },
+    { label: "Trending", path: "/trendingshows" },
     { label: "Option 4", path: "/" },
+    { label: "Profile", path: "/" },
   ];
 
   const handleMenuSelect = (pageURL) => {
