@@ -20,6 +20,7 @@ import AddMovieReviewPage from '../pages/addMovieReviewPage';
 import TrendingMovies from '../pages/trendingMovies';
 import TopRatedMovies from '../pages/topRatedMovies';
 import Actors from '../pages/actors';
+import ActorDetails from './actorDetails';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -115,6 +116,13 @@ function App() {
               <Route path='/actors' element={
               <PrivateRoute>
                 <Actors />
+              </PrivateRoute>
+              }
+              />
+
+              <Route path='/actors/:id' element={
+              <PrivateRoute>
+                <ActorDetails />
               </PrivateRoute>
               }
               />
