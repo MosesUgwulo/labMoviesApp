@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
-//import MovieReviews from "../movieReviews";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 
@@ -18,7 +17,6 @@ export default function ActorDetails( { actors } ) {
         padding: 1.5,
         margin: 0,
     };
-    //const chip = { margin: 0.5 };
     
     const [drawerOpen, setDrawerOpen] = useState(false);
 
