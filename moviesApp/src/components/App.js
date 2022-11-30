@@ -20,7 +20,7 @@ import AddMovieReviewPage from '../pages/addMovieReviewPage';
 import TrendingMovies from '../pages/trendingMovies';
 import TopRatedMovies from '../pages/topRatedMovies';
 import Actors from '../pages/actors';
-import ActorDetails from './actorDetails';
+import ActorDetails from '../pages/actorDetails';
 
 const queryClient = new QueryClient({
     defaultOptions: {

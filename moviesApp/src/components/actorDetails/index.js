@@ -1,12 +1,9 @@
 import React, { useState} from "react";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationIcon from "@mui/icons-material/MonetizationOn";
-import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
-import MovieReviews from "../movieReviews";
+//import MovieReviews from "../movieReviews";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 
