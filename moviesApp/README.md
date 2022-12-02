@@ -85,9 +85,9 @@ $ npm start
 | /movies/:id | Movie Details | Protected |
 | /actors | Actors | Protected |
 | /actors/:id | Actor Details | Protected |
-
-[If relevant, state what aspects of your app are protected/private (i.e. require authentication) and what is public.]
-
+| /trending | Trending | Protected |
+| /top-rated | Top Rated | Protected |
 ## Independent learning (If relevant).
 
-[ Itemize the technologies/techniques you researched independently and adopted in your project, i.e. aspects not covered in the lectures/labs. Mention the source code filenames that illustrate these  (code excerpts are not required) and provide references to the online resources that helped you (articles/blogs).
++ [Firebase Authentication](https://firebase.google.com/docs/auth)
++ [Private Routes](shorturl.at/tzMOP)
