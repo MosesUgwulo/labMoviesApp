@@ -29,47 +29,62 @@ $ npm start
 
 ## TMDB endpoints.
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
-
-e.g.
-
-+ /movies/{movie_id}/reviews - The user reviews or a movie.
-+ /movie/{movie_id}/similar - A list of similar movies. 
++ /movies/{movie_id}/ - The movies details
++ /movies/{movie_id}/reviews - The user reviews or a movie. 
++ /movie/upcoming - A list of upcoming movies.
++ /trending/movie/day - A list of trending movies.
++ /movie/top_rated - A list of top rated movies.
 + /person/popular - A list of popular actors.
-+ /tv/{tv_id}/videos - The videos for a TV show. 
++ /person/{person_id} - The actor details.
 
 ## App Design.
 
-### Component catalogue.
-
-[ Insert a screenshot from the Storybook UI, and highlight the stories that relate to your __new/modified components__ - see the example screenshot below.] .......
-
-e.g.
-
-![](./images/stories.png)
-
 ### UI Design.
 
-[ Insert screenshots of the __new app pages__ you developed (including modified existing pages), Have an appropriate caption for each one (see example below).
+![ ](./images/Login.png)
 
-![ ](./images/detail.png)
+>Allows the user to log in to the app.
 
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+![ ](./images/Signup.png)
 
-![ ](./images/review.png)
+>Allows the user to create an account
 
->Shows the full review for a movie.
+![ ](./images/Reset.png)
+
+>Allows the user to reset their password
+
+![ ](./images/Profile.png)
+
+>Allows the user to update their account details
+
+![ ](./images/Trending.png)
+
+>Shows the user all the trending movies
+
+![ ](./images/TopRated.png)
+
+>Shows the user all the top rated movies
+
+![ ](./images/Actors.png)
+
+>Shows the user all the actors in the database
+
+![ ](./images/ActorDetails.png)
+
+>Shows the user the details of an actor
 
 ### Routing.
 
-[ List the __new routes__ supported by your app and state the associated page.]
-
-e.g. 
-
-+ /actors - displays a list of popular actors.
-+ /actors/:id - shows details about a particular actor.
-+ /actors/:id/movies (protected) - an actor's movie credits.
-+ etc.
+| Route | Page | Aceess |
+| --- | --- | --- |
+| /login | Login | Public |
+| /signup | Signup | Public |
+| /forgot-password | Password Reset | Public |
+| / | Dashboard | Protected |
+| /movies | Movies | Protected |
+| /movies/:id | Movie Details | Protected |
+| /actors | Actors | Protected |
+| /actors/:id | Actor Details | Protected |
 
 [If relevant, state what aspects of your app are protected/private (i.e. require authentication) and what is public.]
 
