@@ -90,4 +90,5 @@ $ npm start
 ## Independent learning (If relevant).
 
 + [Firebase Authentication](https://firebase.google.com/docs/auth)
++ [Firebase Password Reset](https://firebase.google.com/docs/auth/web/manage-users)
 + [Private Routes](https://jasonwatmore.com/post/2022/06/24/react-router-6-private-route-component-to-restrict-access-to-protected-pages#:~:text=The%20react%20private%20route%20component,in%20the%20location%20state%20property.)
