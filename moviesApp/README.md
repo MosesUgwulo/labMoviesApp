@@ -20,12 +20,12 @@ Name: [Moses Ugwulo]
 
 ## Setup requirements.
 
-`
+```
 $ npm install firebase
 $ npm install react-router-dom
 $ npm install react-bootstrap bootstrap
 $ npm start
-`
+```
 
 ## TMDB endpoints.
 
